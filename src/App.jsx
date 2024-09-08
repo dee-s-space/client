@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Navbar } from "./components";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -17,8 +18,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Welcome to Pearl Store</h1>
-      <button onClick={handleDarkMode}>Toggle Dark Mode</button>
+      <Navbar darkMode={darkMode} handleDarkMode={handleDarkMode} />
     </div>
   );
 };
