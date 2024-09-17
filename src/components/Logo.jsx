@@ -1,9 +1,7 @@
 import React from "react";
-
 import { getAccessToken } from "../utils";
 import { useNavigate } from "react-router-dom";
-
-import { FaAirFreshener } from "react-icons/fa";
+import { logo } from "../assets";
 
 const Logo = () => {
   const navigate = useNavigate();
@@ -21,10 +19,10 @@ const Logo = () => {
       className="flex flex-col gap-2 items-center justify-center"
       onClick={handleHome}
     >
-      <span>
-        <FaAirFreshener />
-      </span>
-      <h1 className="uppercase font-bold">ganja stores</h1>
+      <img src={logo} alt="" className="w-[35px]" />
+      <h1 className="uppercase font-medium text-xl">
+        {`dee's`} <span>space</span>
+      </h1>
     </div>
   );
 };
