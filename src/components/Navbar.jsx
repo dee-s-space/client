@@ -22,6 +22,7 @@ import Logo from "./Logo";
 import { headerLinks } from "../constants";
 import { Link } from "react-router-dom";
 import { Login } from "../pages";
+import Mobilemenu from "./Mobilemenu";
 
 /* eslint-disable react/prop-types */
 const Navbar = ({ darkMode, handleDarkMode }) => {
@@ -37,6 +38,9 @@ const Navbar = ({ darkMode, handleDarkMode }) => {
   };
   const closeLoginModal = () => {
     setShowLoginModal(false);
+  };
+  const closeMobileMenu = () => {
+    setToggle(false);
   };
 
   return (
@@ -60,7 +64,7 @@ const Navbar = ({ darkMode, handleDarkMode }) => {
           <div className="w-full lg:max-w-[1100px] mx-auto flex items-center justify-between">
             <span
               onClick={handleToggle}
-              className="flex items-center gap-2 uppercase sm:hidden cursor-pointer"
+              className="flex items-center gap-2 uppercase lg:hidden cursor-pointer"
             >
               {!toggle ? (
                 <MdMenu className="text-xl" />
@@ -115,7 +119,7 @@ const Navbar = ({ darkMode, handleDarkMode }) => {
           />
           <select
             name=""
-            className="hidden lg:flex dark:bg-slate-950 bg-[#fff] uppercase dark:text-[#fff] w-[25%] border-slate-400 p-2 text-slate-950 border-l"
+            className="hidden lg:flex dark:bg-transaparent bg-[#fff] dark:text-purple-500 text-slate-950 uppercase  w-[25%] border-slate-400 p-2 border-l"
           >
             <option value="">select category</option>
           </select>
@@ -125,6 +129,12 @@ const Navbar = ({ darkMode, handleDarkMode }) => {
         </div>
       </nav>
       {showLoginModal && <Login closeModal={closeLoginModal} />}
+      {toggle && (
+        <Mobilemenu
+          closeModal={closeMobileMenu}
+          handleLogin={handleLoginModal}
+        />
+      )}
     </header>
   );
 };

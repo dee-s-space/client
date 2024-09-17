@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 /* eslint-disable react/prop-types */
 const Login = ({ closeModal }) => {
   return (
-    <div className="bg-black bg-opacity-40 w-full h-screen fixed top-0 left-0">
+    <div className="bg-slate-950 dark:bg-white dark:bg-opacity-40 bg-opacity-40 w-full h-screen fixed top-0 left-0">
       <div className="bg-white absolute top-0 right-0 w-[300px] lg:w-[350px] h-full text-slate-800">
         <span className="flex justify-between font-semibold text-md p-6">
           <h3>Sign in </h3>
